@@ -3,57 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="https://gagan9870.github.io/FullStack_Practicals/">
+    <!-- <base href="https://gagan9870.github.io/FullStack_Practicals/"> -->
     <title>Image Map</title>
     <style>
-        a{
-            color: white;
-            font-size: 20px;
-            margin-right:3%;
-            margin-left: 3%;
-            
-        }
-        b{
-            font-size: 20px;
-            color: white;
-        }
-        .myclass{
-            height: 20%;
-            border: 10px solid white;
-            background-color: rgb(77, 100, 96);
-            margin-left: 5%;
-            margin-right:5%;
-        }
         .myimg{
-            display:block;
-            text-align: center;
+            border: 2px solid skyblue;        
+        }
+        body{
+            background-color: cadetblue;
         }
     </style>
 </head>
-<body style="background-color: cadetblue;">
-    <p class="myclass">
-    <a href="index.html" target="_blank" >HOME</a>
-    <b>|</b>
-    <a href="practicals/practical-1.html" target="_blank" >PRACTICAL-1</a>
-    <b>|</b>
-    <a href="practicals/practical-2.html" target="_blank" >PRACTICAL-2</a>
-    <b>|</b>
-    <a href="practicals/practical-3.html" target="_blank" >PRACTICAL-3</a>
-    <b>|</b>
-    <a href="practicals/practical-4.html" target="_blank" >PRACTICAL-4</a>
-    <b>|</b>
-    <a href="practicals/practical-5.html" target="_blank" >PRACTICAL-5</a>
-    </p>
+<body>
+    <div style="text-align: center;">
+    <img src="../Image/practicalsimg.png" usemap="#head">
+    <map name="head">
+        <area shape="rect" coords="8, 5, 120, 60" href="index.html" target="_blank" alt="Home">
+        <area shape="rect" coords="121, 5, 332, 60" href="practical-1.html" target="_blank" alt="practical-1">
+        <area shape="rect" coords="333, 5, 543, 60" href="practical-2.html" target="_blank" alt="practical-2">
+        <area shape="rect" coords="544, 5, 755, 60" href="practical-3.html" target="_blank" alt="practical-3">
+        <area shape="rect" coords="756, 5, 967, 60" href="practical-4.html" target="_blank" alt="practical-4">
+        <area shape="rect" coords="968, 5, 1158, 60" href="#" alt="practical-5">
+    </map>
     <h1 style="color: white; text-align: center;">Introduction to Front-End Technologies</h1>
-    <span class="myimg"><img src="C:\Users\DELL\Desktop\FullStack_Practicals\Image\img4.jpg" alt="Practical-5 Image" height="30%" width="30%" usemap="#image">
-    </span>
+    <img class="myimg" src="../Image/img4.jpg" alt="Practical-5 Image" height="30%" width="30%" usemap="#image">
     <map name="image">
-        <area shape="rect" coords="18,10,171,166" href="practicals/practical-5-html.html" alt="HTML" target="_blank">
-        <area shape="circle" coords="289,98,93" href="practicals/practical-5-css.html" alt="CSS" target="_blank">
-        <area shape="rect" coords="24,196,171,338" href="practicals/practical-5-js.html" alt="Java Script" target="_blank">
-        <area shape="poly" coords="289,202,346,225,339,300,289,328,240,301,231,224" href="practicals/practical-5-bootstrap.html" alt="Booot Strap" target="_blank">
+        <area shape="rect" coords="18,10,171,166" href="practical-5-html.html" alt="HTML" target="_blank">
+        <area shape="circle" coords="290,92,95" href="practical-5-css.html" alt="CSS" target="_blank">
+        <area shape="rect" coords="24,196,171,338" href="practical-5-js.html" alt="Java Script" target="_blank">
+        <area shape="poly" coords="289,202,346,225,339,300,289,328,240,301,231,224" href="practical-5-bootstrap.html" alt="Booot Strap" target="_blank">
     </map>
     <h2 style="color: red; text-align: center;">Click on any part of logo to know more about these technologies.</h2>
-
+    </div>
 </body>
 </html>
