@@ -4,8 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical-7</title>
+    <style>
+        #container
+        {
+            border: 5px solid aqua;
+            width: 700px;
+            padding: 5px;
+            margin: 0 auto;
+        }
+        #container::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #header
+        {
+            width: 100%;
+            background-color: grey;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 5px;
+        }
+        #banner
+        {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: cadetblue;
+        }
+        #section
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #circlecontainer
+        {
+            /* border: 2px solid; */
+            width: 100%;
+            height: auto;
+        }
+        #circlecontainer::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #circle
+        {
+            border: 2px solid;
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            margin:0 10px  10px;
+            float: left;
+            background-color: goldenrod;
+        }
+        #content
+        {
+            /* border: 2px solid; */
+            width: 100%;
+        }
+        #content::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #leftbar
+        {
+            /* border: 2px solid; */
+            width: 340px;
+            height: 300px;
+            float: left;
+            background-color: indianred;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #rightbar
+        {
+            /* border: 2px solid; */
+            width: 340px;
+            height: 300px;
+            float: right;
+        }
+        #article-1
+        {
+            width: 100%;
+            height: 93px;
+            background-color: red;
+            margin-bottom: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        #article-2
+        {
+            width: 100%;
+            height: 93px;
+            background-color: red;
+            margin-bottom: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        #article-3
+        {
+            width: 100%;
+            height: 94px;
+            background-color: red;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin-bottom: 10px; */
+            color: white;
+        }
+        #boxcontainer
+        {
+            /* border: 2px solid; */
+            width: 100%;
+            height: auto;
+        }
+        #boxcontainer::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #box
+        {
+            border: 2px solid;
+            width: 150px;
+            height: 150px;
+            /* border-radius: 100%; */
+            margin:0 10px  10px;
+            float: left;
+            background-color:red;
+        }
+        #footer
+        {
+            width: 100%;
+            background-color: blueviolet;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 5px;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>This is practical-7</h1>
+    <div id="container">
+        <div id="header">Header</div>
+        <div id="banner">Banner</div>
+        <h3 id="section">Section-1</h3>
+        <div id="circlecontainer">
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+            <div id="circle"></div>
+        </div>
+        <h3 id="section">Section-2</h3>
+        <div id="content">
+            <div id="leftbar">Main Content</div>
+            <div id="rightbar">
+                <div id="article-1">Artical-1</div>
+                <div id="article-2">Artical-2</div>
+                <div id="article-3">Artical-3</div>
+            </div>
+        </div>
+        <h3 id="section">Section-3</h3>
+        <div id="boxcontainer">
+            <div id="box"></div>
+            <div id="box"></div>
+            <div id="box"></div>
+            <div id="box"></div>
+        </div>
+        <h3 id="section">Section-4</h3>
+        <div id="footer">Footer</div>
+    </div>
 </body>
 </html>
