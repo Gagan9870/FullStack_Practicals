@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-8</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        #container
+        {
+            /* border: 5px solid aqua; */
+            width: 100%;
+            /* padding:0 20px; */
+            margin: 0 auto;
+        }
+        #container::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #header
+        {
+            width: 100%;
+            background-color: grey;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 20px;
+            /* margin-left: 20px; */
+        }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            /* display: inline block; */
+            float: left;
+            font-size: 30px;
+            margin: auto 40px;
+            /* display: flex;
+            justify-content: space-evenly; */
+        }
+        ul li a{
+            width: 100%;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            /* text-transform: uppercase; */
+
+        }
+        ul li a:hover{
+            /* color: white; */
+            background-color: yellow;
+        }
+        #banner
+        {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            /* background-color: cadetblue; */
+            /* padding: 20px; */
+        }
+        #banner img{
+            width: 100%;
+            margin: 0 20px;
+            position: relative;
+        }
+        #text
+        {
+            position: absolute;
+            color: white;
+            top:110px;
+            left: 40px;
+            font-size: 90px;
+        }
+        #section
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0 20px;
+            font-size: 50px;
+        }
+        #circlecontainer
+        {
+            /* border: 2px solid; */
+            width: 100%;
+            height: auto;
+        }
+        #circlecontainer::after{
+            content: '';
+            display: block;
+            clear: both;
+            /* margin-top: 30px; */
+        }
+        #circle
+        {
+            border: 2px solid;
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+            margin-left: 65px;
+            /* justify-content: center; */
+            float: left;
+            background-color: goldenrod;
+        }
+        #circle img{
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+        }
+        #content
+        {
+            /* border: 2px solid; */
+            width: 100%;
+        }
+        #content::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #leftbar
+        {
+            /* border: 2px solid; */
+            width: 50%;
+            height: 640px;
+            margin-left: 20px;
+            float: left;
+            background-color: indianred;
+            font-family: Arial, Helvetica, sans-serif;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+        #leftbar p
+        {
+            text-align: justify;
+            color: white;
+        }
+        #rightbar
+        {
+            /* border: 2px solid; */
+            width: 45%;
+            height: 640px;
+            margin-right: 20px;
+            float: right;
+        }
+        #article-1
+        {
+            width: 100%;
+            height: 200px;
+            background-color: red;
+            margin-bottom: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        #article-1 img{
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        #project1
+        {
+            position: absolute;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            top: 1312px;
+            /* left: auto;
+            right: auto;
+            bottom: 150px; */
+        }
+        #article-2
+        {
+            width: 100%;
+            height: 200px;
+            background-color: red;
+            margin-bottom: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        #article-2 img{
+            height: 100%;
+            width: 100%;
+        }
+        #project2
+        {
+            position: absolute;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            top: 1532px;
+            /* left: auto;
+            right: auto;
+            bottom: 150px; */
+        }
+        #article-3
+        {
+            width: 100%;
+            height: 200px;
+            background-color: red;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin-bottom: 10px; */
+            color: white;
+        }
+        #article-3 img{
+            height: 100%;
+            width: 100%;
+        }
+        #project3
+        {
+            position: absolute;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            top: 1752px;
+            /* left: auto;
+            right: auto;
+            bottom: 150px; */
+        }
+        #boxcontainer
+        {
+            /* border: 2px solid; */
+            width: 97%;
+            height: auto;
+            padding-top: 7px;
+            margin: 0 1.5%;
+        }
+        #boxcontainer::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #box
+        {
+            /* border: 2px solid; */
+            border-radius: 3%;
+            width: 20%;
+            height: auto;
+            /* border-radius: 100%; */
+            margin: 0 20px;
+            float: left;
+            background-color:aqua;
+            padding: 10px;
+        }
+        #box img
+        {
+            width: 100%;
+            height: 150px;
+            border-radius: 8%;
+        }
+        
+        .button{
+            display: block;
+            background: orange;
+            text-align: center;
+            padding: 7px 0;
+            border-radius: 8px;
+            color:white;
+            text-decoration: none;
+            margin-top: 15px;
+            margin-bottom: 2px;
+        }
+        .button:hover
+        {
+            /* color: blue; */
+            background: blue;
+        }
+        #box p{
+            margin:8px 0;
+            word-spacing: 8px;
+            overflow:initial;
+        
+        }
+        #footer
+        {
+            width: 100%;
+            padding-top: 30px;
+            background-color:rgb(42, 193, 243);
+            color: black;
+            /* display: flex;
+            align-items: center; */
+            /* justify-content: center; */
+            height: 100px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#About Us">ABOUT US</a></li>
+                <li><a href="#Team Members">TEAM</a></li>
+                <li><a href="#Technologies Used">TECHNOLOGIES</a></li>
+                <li><a href="#Contact Us">CONTACT</a></li>
+            </ul>
+        </div>
+        <div id="banner">
+            <img src="../Image/practical8.jpg" alt="Practical-8 Image">
+            <div id="text">PRACTICAL-8</div>
+        </div>
+        <h3 id="section"><a name="Team Members">Team Members</a></h3>
+        <div id="circlecontainer">
+            <div id="circle">
+                <img src="../Image/emp1.png" alt="Employee 1">
+            </div>
+            <div id="circle">
+                <img src="../Image/emp2.png" alt="Employee 2">
+            </div>
+            <div id="circle">
+                <img src="../Image/emp3.png" alt="Employee 3">
+            </div>
+            <div id="circle">
+                <img src="../Image/emp4.png" alt="Employee 4">
+            </div>
+        </div>
+        <h3 id="section"><a name="About Us">About Us</a></h3>
+        <div id="content">
+            <div id="leftbar">
+                <h1>About Projects</h1>
+                <br>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis natus necessitatibus itaque sequi, tempore doloribus asperiores modi sunt quis ipsa iure, sint error neque nulla harum magni aperiam temporibus maiores eum perferendis distinctio? Aperiam incidunt eligendi vitae temporibus fugit, pariatur a ipsam voluptatum nobis quidem fugiat earum quo minus expedita, ea quae similique inventore laboriosam. Nulla commodi nesciunt distinctio ducimus repudiandae, dicta numquam placeat possimus in quasi ut inventore reprehenderit! Ullam exercitationem obcaecati debitis tenetur fugiat maxime dolores ipsam beatae necessitatibus quisquam, modi, aliquid odit ducimus fugit iusto! Incidunt suscipit vitae laboriosam exercitationem ea recusandae non porro eos voluptatem unde?Lorem ipsum dolor sit amet consectetur adipisicing elit. Non reprehenderit iste qui eos omnis laudantium alias magni laboriosam vitae neque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. A inventore atque optio, cum quaerat officia, iusto omnis obcaecati dolorum saepe aliquam eveniet. Animi possimus illo qui ut perspiciatis dolores quaerat obcaecati facere eius eum officiis rem ipsum odit ullam culpa sed, cumque sint corrupti quo pariatur. Officiis, nostrum vel! Eius libero voluptatem aliquam deleniti quod ea in, voluptate corporis, blanditiis quo veniam totam non? Placeat dolorum esse inventore ad fuga, praesentium doloremque facere porro soluta earum recusandae asperiores officiis. Voluptatibus ullam quaerat quis aut cum nemo, molestias sunt in quae recusandae numquam iusto voluptate maiores molestiae tenetur. Excepturi, incidunt error?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nemo maxime quae unde perspiciatis beatae animi qui optio itaque facilis! Incidunt quasi cumque architecto obcaecati blanditiis ut at quod repellendus voluptate consectetur reprehenderit laborum iusto aspernatur voluptatibus dignissimos enim rem atque minima, dolor earum. Quo nemo ipsa obcaecati iure distinctio!Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quod earum, impedit eius corrupti commodi exercitationem eum debitis quidem! Magni impedit earum tempore cupiditate! Sed id ullam reiciendis nobis reprehenderit quis veritatis dolorem eaque neque incidunt facilis recusandae dolores necessitatibus nihil, explicabo doloribus? Quisquam provident ea doloremque, ipsam tempora magni nulla optio praesentium rem veritatis rerum veniam aliquam necessitatibus obcaecati vel repudiandae minus! Esse velit dolorum odio minus voluptatum recusandae illo officiis provident, soluta magni sint ipsa ducimus cum veniam officia porro, ipsam, placeat quis fugiat eius! Blanditiis dicta enim doloribus ea, saepe asperiores fugit quis quaerat odit velit harum.</p>
+            </div>
+            <div id="rightbar">
+                <div id="article-1">
+                    <img src="../Image/p3.jpg" alt="">
+                    <div id="project1"><h3>PROJECT-1</h3></div>
+                </div>
+                <div id="article-2">
+                    <img src="../Image/p1.jpg" alt="">
+                    <div id="project2"><h3>PROJECT-2</h3></div>
+                </div>
+                <div id="article-3">
+                    <img src="../Image/p2.jpeg" alt="">
+                    <div id="project3"><h3>PROJECT-3</h3></div>    
+                </div>
+            </div>
+        </div>
+        <h3 id="section"><a name="Technologies Used">Technologies Used</a></h3>
+        <div id="boxcontainer">
+            <div id="box">
+                <img src="../Image/html.png" alt="">
+                <h3>Introduction to HTML</h3>
+                <p>Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser.</p>
+                <a class = 'button' href = "practical-5-html.html" target="_blank">Read More</a>
+            </div>
+            <div id="box">
+                <img src="../Image/CSS.jpg" alt="CSS">
+                <h3>Introduction to CSS</h3>
+                <p>Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to simplify the process of making web pages presentable.</p>            
+                <a class = 'button' href = "practical-5-css.html" target="_blank">Read More</a>
+            </div>
+            <div id="box">
+                <img src="../Image/js.png" alt="JS">
+                <h3>Introduction to Javascript</h3>
+                <p>JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive (e.g., having complex animations, clickable buttons, etc).</p>            
+                <a class = 'button' href = "practical-5-js.html" target="_blank">Read More</a>
+            </div>
+            <div id="box">
+                <img src="../Image/bootstrap.png" alt="Bootstrap">
+                <h3>Introduction to Bootstrap</h3>
+                <p>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It is the 7th most starred project on GitHub.</p>            
+                <a class = 'button' href = "practical-5-bootstrap.html" target="_blank">Read More</a>
+            </div>
+        </div>
+        <h3 id="section"><a name="Contact Us">Contact Us</a></h3>
+        <div id="footer">
+            <p style="margin-bottom: 20px;">Website Template For Practical-8 &copy <a href="https://www.beta-labs.in/" target="_blank">Beta-Labs</a></p>
+            <a href="#top">Back to Top</a>
+        </div>
+    </div>
+</body>
+</html>
