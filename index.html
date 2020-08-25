@@ -4,75 +4,352 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Stack Practicals</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         *{
             margin:0;
             padding: 0; 
+            box-sizing: border-box;
         }
         .header{
             width: 100%;
             height: 70px;
             background-color: grey;
-            box-sizing: border-box;
-            padding: auto;
+            padding: 0 10px;
         }
         .header h2{
             float: left;
-            line-height: 70px;
             color: white;
             text-transform: uppercase;
+            line-height: 70px;
         }
-        .menu {
+        .header .menu{
+            list-style: none;
             float: right;
-            /* display: inline - block; */
         }
         .menu li{
-            list-style: none;
             display: inline-block;
-            /* line-height: 70px; */
-            margin:0 25px;
-
         }
         .menu li a{
             text-decoration: none;
-            text-transform: uppercase;
-            color:black;
-            /* line-height: 70px; */
-            margin-left: auto;
-            /* box-sizing: border-box; */
-            /* padding:    5px ;
-            padding-top: 10px;
-            padding-left: 10px; */
+            color: white;
             font-size: 20px;
-            display: block;
-            width: 100%;
-            transition: 0.7s;
-            height: 27px;
-            margin-top: 20px;
-            
-            /* margin-top: 30px; */
-            /* background-color: yellow; */
-            
-            
+            line-height: 70px;
+            text-transform: uppercase;
+            padding: 0 20px;
+            transition: .4s;
+            border-radius: 10px;
+            /* background-color: blue; */
         }
+        
         .menu li a:hover{
-            color: blue;
-            background-color:rgb(25, 10, 160);
+            color: yellow;
+            background-color: tomato;
+            
         }
+        .show-btn:hover,.hide-btn:hover{
+            color: yellow;
+        }
+        .show-btn{
+            float: right;
+            
+        }
+        .show-btn,.hide-btn{
+            font-size: 30px;
+            color: white;
+            transition:.4s;
+            line-height: 70px;
+            display: none;
+
+        }
+        @media(max-width: 1180px){
+            .show-btn,.hide-btn{
+                display: block;
+            }
+            .menu{
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: -100%;
+                text-align:center;
+                background-color: black;
+                line-height: normal;
+                padding: 80px 0;
+
+            }
+            #chk:checked ~ .menu{
+                right: 0;
+            }
+            .menu li{
+                display: block;
+            }
+            #chk{
+                position: absolute;
+                visibility: hidden;
+                z-index: 10;
+            }
+            .hide-btn{
+                position: absolute;
+                top: 10px;
+                right: 20px;
+            } 
+
+            .practicals_container{
+                /* border: 2px solid; */
+                width: 100%;
+            
+                padding: 10px 0;
+                padding-left: 40px;
+
+            
+            }
+            .practicals_container::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .box{
+                /* border: 2px solid; */
+                /* border-radius: 15px; */
+                width: 31%;
+                height: 300px;
+                float: left;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                background-color:rgb(255, 196, 0);
+                padding-top: 10px;
+                position: relative;
+                border-radius: 20px;
+                /* text-decoration-style: dashed; */
+            }
+            .box h3{
+                text-align: center;
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+            .box p{
+                color: white;
+                font-size: 20px;
+                text-align: justify;
+            }
+            .box p b{
+                color: black;
+                font-size: 20px;
+            }
+            .button{
+                display: block;
+                text-decoration: none;   
+                /* text-align: center; */
+                font-size: 25px;  
+                padding: 7px 5px;
+                background-color: red;
+                color: white;  
+                border-radius: 15px;
+                /* margin: 0 50px; */
+                position: absolute;
+                bottom: 10px;
+                left: 110px;
+
+            }
+            .button:hover{
+                background-color: yellow;
+            }
+        }
+        @media(min-width: 1180px){
+                .practicals_container{
+                /* border: 2px solid; */
+                width: 100%;
+            
+                padding: 10px 0;
+                padding-left: 40px;
+
+            
+            }
+            .practicals_container::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .box{
+                /* border: 2px solid; */
+                /* border-radius: 15px; */
+                width: 23%;
+                height: 300px;
+                float: left;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                background-color:rgb(255, 196, 0);
+                padding-top: 10px;
+                position: relative;
+                border-radius: 20px;
+                /* text-decoration-style: dashed; */
+            }
+            .box h3{
+                text-align: center;
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+            .box p{
+                color: white;
+                font-size: 20px;
+                text-align: justify;
+            }
+            .box p b{
+                color: black;
+                font-size: 20px;
+            }
+            .button{
+                display: block;
+                text-decoration: none;   
+                /* text-align: center; */
+                font-size: 25px;  
+                padding: 7px 5px;
+                background-color: red;
+                color: white;  
+                border-radius: 15px;
+                /* margin: 0 50px; */
+                position: absolute;
+                bottom: 10px;
+                left: 110px;
+
+            }
+            .button:hover{
+                background-color: yellow;
+            }
+        }
+        @media(max-width: 900px){
+                .practicals_container{
+                /* border: 2px solid; */
+                width: 100%;
+            
+                padding: 10px 0;
+                padding-left: 40px;
+
+            
+            }
+            .practicals_container::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .box{
+                /* border: 2px solid; */
+                /* border-radius: 15px; */
+                width: 46%;
+                height: 300px;
+                float: left;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                background-color:rgb(255, 196, 0);
+                padding-top: 10px;
+                position: relative;
+                border-radius: 20px;
+                /* text-decoration-style: dashed; */
+            }
+            .box h3{
+                text-align: center;
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+            .box p{
+                color: white;
+                font-size: 20px;
+                text-align: justify;
+            }
+            .box p b{
+                color: black;
+                font-size: 20px;
+            }
+            .button{
+                display: block;
+                text-decoration: none;   
+                /* text-align: center; */
+                font-size: 25px;  
+                padding: 7px 5px;
+                background-color: red;
+                color: white;  
+                border-radius: 15px;
+                /* margin: 0 50px; */
+                position: absolute;
+                bottom: 10px;
+                left: 110px;
+
+            }
+            .button:hover{
+                background-color: yellow;
+            }
+        }
+        @media(max-width: 1180px){
+                .practicals_container{
+                /* border: 2px solid; */
+                width: 100%;
+            
+                padding: 10px 0;
+                padding-left: 40px;
+
+            
+            }
+            .practicals_container::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .box{
+                /* border: 2px solid; */
+                /* border-radius: 15px; */
+                width: 92%;
+                height: 300px;
+                float: left;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                background-color:rgb(255, 196, 0);
+                padding-top: 10px;
+                position: relative;
+                border-radius: 20px;
+                /* text-decoration-style: dashed; */
+            }
+            .box h3{
+                text-align: center;
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+            .box p{
+                color: white;
+                font-size: 20px;
+                text-align: justify;
+            }
+            .box p b{
+                color: black;
+                font-size: 20px;
+            }
+            .button{
+                display: block;
+                text-decoration: none;   
+                /* text-align: center; */
+                font-size: 25px;  
+                padding: 7px 5px;
+                background-color: red;
+                color: white;  
+                border-radius: 15px;
+                /* margin: 0 50px; */
+                position: absolute;
+                bottom: 10px;
+                left: 110px;
+
+            }
+            .button:hover{
+                background-color: yellow;
+            }
+        }
+        
         .banner{
             width: 100%;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-top: 20px;
-            /* background-color: lightsteelblue; */
+            padding: 20px;
             
         }
         .banner img{
             width: 100%;
-            height: 100%;
-            margin: 0 20px;
             background-color: lightsteelblue;
         }
         h1{
@@ -81,59 +358,7 @@
             margin: 20px 0;
             text-transform: uppercase;
         }
-        .practicals_container{
-            /* border: 2px solid; */
-            width: 100%;
-            height: auto;
-            /* padding: 10px; */
-            margin-bottom: 20px;
-        }
-        .practicals_container::after{
-            content: '';
-            display: block;
-            clear: both;
-        }
-        .box{
-            /* border: 2px solid; */
-            border-radius: 15px;
-            width: 22%;
-            height: 300px;
-            float: left;
-            margin: 1.3%;
-            background-color: rgb(105, 245, 62);
-            padding-top: 10px;
-            
-            /* text-decoration-style: dashed; */
-        }
-        .box h3{
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-        .box p{
-            color: white;
-            text-align: justify;
-        }
-        .box p b{
-            color: black;
-            font-size: 20px;
-        }
-        .box a{
-            text-decoration: none;
-            font-size: 25px;
-            display: block;
-            width: 70px;
-            height: auto;
-            background-color: orangered;
-            color: white;
-            padding: 5px;
-            margin: 30px auto;
-            
-        }
-        .button:hover{
-            background-color: yellow;
-            color: violet;
-        }
+        
         .list{
             /* border: 2px solid; */
             width: 100%;
@@ -141,7 +366,7 @@
             text-align: left;
             margin-bottom: 20px;
             
-            /* padding: 20px; */
+            padding: 20px;
         }
         .list p{
             font-family:Arial, Helvetica, sans-serif ;
@@ -153,12 +378,13 @@
         .student{
             /* border: 2px solid ; */
             width: 100%;
+            text-align: left;
+            padding: 10px 35%;
             margin-bottom: 20px;
-            background-color: aqua;
+            
         }
         .student p{
             font-size: 25px;
-            margin-left: 40%;
             color: orange;
         }
         .student p b{
@@ -205,6 +431,10 @@
 <body>
     <div class="header">
         <h2>Full Stack Practicals</h2>
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-btn">
+            <i class="fa fa-bars"></i>
+        </label>
         <ul class="menu">
             <li><a href="#">home</a></li>
             <li><a href="#PRACTICALS">practicals</a></li>
@@ -212,6 +442,9 @@
             <li><a href="#Student details">student</a></li>
             <li><a href="#about us">about</a></li>
             <li><a href="#contact us">contact</a></li>
+            <label for="chk" class="hide-btn">
+                <i class="fa fa-times"></i>
+            </label>
         </ul>
     </div>
     <div class="banner">
