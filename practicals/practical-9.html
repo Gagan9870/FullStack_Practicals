@@ -1,401 +1,1021 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practical-9</title>
-    <style>
-        *
-        {
-            margin: 0;
-            padding: 0;
-        }
-        #container
-        {
-            /* border: 5px solid aqua; */
-            width: 100%;
-            /* padding:0 20px; */
-            margin: 0 auto;
-        }
-        #container::after{
-            content: '';
-            display: block;
-            clear: both;
-        }
-        #header
-        {
-            width: 100%;
-            background-color: grey;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 70px;
-            padding: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            margin-bottom: 20px;
-            /* margin-left: 20px; */
-        }
-        ul{
-            list-style: none;
-        }
-        ul li{
-            /* display: inline block; */
-            float: left;
-            font-size: 30px;
-            margin: auto 40px;
-            /* display: flex;
-            justify-content: space-evenly; */
-        }
-        ul li a{
-            width: 100%;
-            text-align: center;
-            display: block;
-            text-decoration: none;
-            color: white;
-            padding: 15px 20px;
-            font-family: Arial, Helvetica, sans-serif;
-            /* text-transform: uppercase; */
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Practical-9</title>
+
+  <style>
+    
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    
+    html {
+      scroll-padding-top: 70px;
+      scroll-behavior: smooth;
+    }
+
+    #container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+   
+
+    #header {
+      background-color: grey;
+      width: 100%;
+      height: 70px;
+      max-width: 1200px;
+      position: fixed;
+      top: 0;
+      height: 70px;
+    }
+
+    
+    .menu {
+      list-style: none;
+      float: right;
+      padding: 0 20px;
+    }
+
+    .menu li {
+      display: inline-block;
+      line-height: 70px;
+    }
+
+    .menu li a {
+      transition: 0.4s;
+      display: block;
+      text-decoration: none;
+      color: white;
+      padding: 0px 20px;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+
+    .menu li a:hover {
+      color: black;
+      background-color: white;
+    }
+
+    .show-btn,
+    .hide-btn,
+    #chk {
+      font-size: 30px;
+      line-height: 70px;
+      color: white;
+      display: none;
+      float: right;
+      padding-right: 20px;
+    }
+
+    
+
+    #banner {
+      width: 100%;
+      margin-top: 90px;
+      height: 680px;
+      margin-bottom: 15px;
+      display: flex;
+      font-size: 40px;
+      color: white;
+    }
+
+    #banner {
+      background-image: url(../Image/practical8.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    #banner h2 {
+      margin: 20px 20px;
+      color: #fff;
+    }
+
+    
+
+    #circle-container {
+      width: 100%;
+      margin: 15px auto;
+    }
+
+    #circle-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .circle img {
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      background-color: goldenrod;
+      float: left;
+      margin-left: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+    }
+
+    
+    #sec2-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    #left-side {
+      width: 50%;
+      height: 550px;
+      background-color: gray;
+      float: left;
+      color: #fff;
+    }
+
+    #left-p>h2 {
+      text-align: left;
+      margin: 10px 5px;
+    }
+
+    #left-p>p {
+      font-size: 20px;
+      padding: 10px;
+      text-align: justify;
+      line-height: 28px;
+    }
+
+    #right-side {
+      width: 48%;
+      height: 550px;
+      float: right;
+    }
+
+    .artical {
+      height: 31%;
+      margin-bottom: 20px;
+      background-color: chocolate;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+    }
+
+    #p1 {
+      background-image: url(../Image/p1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    #p2 {
+      background-image: url(../Image/p2.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    #p3 {
+      background-image: url(../Image/p3.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    
+    #grid-container {
+      width: 100%;
+      margin: 15px auto;
+    }
+
+    #grid-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .grid {
+      width: 20%;
+      float: left;
+      margin-left: 50px;
+      background-color: lightgrey;
+      border-radius: 8px;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid>img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .grid>h4 {
+      margin: 0px 10px;
+      text-align: center;
+    }
+
+    .grid>p {
+      margin: 10px;
+      font-size: 15px;
+      text-align: justify;
+      line-height: 25px;
+      color: white;
+    }
+
+    .grid>a {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+      background-color: red;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    h1 {
+      color: black;
+      font-size: 40px;
+      text-align: center;
+      padding: 25px 0px;
+    }
+
+    .grid>a:hover {
+      background-color: blue;
+    }
+
+    
+    #footer {
+      background-color: plum;
+      height: 100px;
+    }
+
+    #footer>p {
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      padding: 20px;
+    }
+
+    
+
+    @media (min-width: 801px) and (max-width: 1199px) {
+      .menu {
+        list-style: none;
+        float: right;
+      }
+
+      .menu li {
+        line-height: 70px;
+        display: inline-block;
+      }
+
+      .menu li a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 0px 20px;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+
+      .menu li a:hover {
+        color: black;
+        background-color: white;
+      }
+
+      html {
+        scroll-padding-top: 70px;
+        scroll-behavior: smooth;
+      }
+
+      #container {
+        width: 100%;
+      }
+
+      .show-btn,
+      .hide-btn,
+      #chk {
+        font-size: 30px;
+        line-height: 70px;
+        color: white;
+        display: none;
+        float: right;
+        padding-right: 20px;
+      }
+
+      
+      #header {
+        width: 100%;
+        background-color: grey;
+        position: fixed;
+        top: 0;
+        height: 70px;
+      }
+
+      
+      #banner {
+        width: 100%;
+        margin-top: 90px;
+        height: 680px;
+        margin-bottom: 15px;
+        display: flex;
+        font-size: 40px;
+        color: white;
+      }
+
+      #banner {
+        background-image: url(../Image/practical8.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      #banner h2 {
+        margin: 20px 20px;
+        color: #fff;
+      }
+
+      
+
+      #circle-container {
+        width: 100%;
+      }
+
+      #circle-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .circle img {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background-color: goldenrod;
+        float: left;
+        margin-left: 15%;
+        margin-bottom: 20px;
+      }
+
+      
+      #sec2-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      #left-side {
+        width: 50%;
+        height: 550px;
+        background-color: gray;
+        float: left;
+        color: #fff;
+      }
+
+      #left-p>h2 {
+        text-align: left;
+        margin: 10px 5px;
+      }
+
+      #left-p>p {
+        font-size: 20px;
+        padding: 10px;
+        text-align: justify;
+        line-height: 28px;
+      }
+
+      #right-side {
+        width: 48%;
+        height: 550px;
+        float: right;
+      }
+
+      .artical {
+        height: 31%;
+        margin-bottom: 20px;
+        background-color: chocolate;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        overflow: hidden;
+      }
+
+      #p1 {
+        background-image: url(../Image/p1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p2 {
+        background-image: url(../Image/p2.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p3 {
+        background-image: url(../Image/p3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      
+      #grid-container {
+        width: 100%;
+        margin: 15px auto;
+      }
+
+      #grid-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .grid {
+        width: 40%;
+        float: left;
+        margin-left: 65px;
+        margin-bottom: 20px;
+        background-color: lightgrey;
+        border-radius: 8px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .grid>img {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 20px;
+      }
+
+      .grid>h4 {
+        margin: 0px 10px;
+        text-align: center;
+      }
+
+      .grid>p {
+        margin: 10px;
+        font-size: 20px;
+        text-align: justify;
+        line-height: 30px;
+        color: white;
+      }
+
+      .grid>a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        background-color: red;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      h1 {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding: 25px 0px;
+      }
+
+      .grid>a:hover {
+        background-color: blue;
+      }
+
+     
+      #footer {
+        background-color: plum;
+        height: 100px;
+      }
+
+      #footer>p {
+        font-size: 16px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+      }
+    }
+
+    
+
+    @media (max-width: 800px) {
+      #header {
+        width: 100%;
+        background-color: grey;
+        position: fixed;
+        top: 0;
+        height: 70px;
+      }
+
+      .show-btn {
+        display: block;
+      }
+
+      .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        padding: 80px 0px;
+        line-height: normal;
+        transition: 0.7s;
+      }
+
+      .menu li {
+        display: block;
+      }
+
+      .manu li a {
+        display: block;
+      }
+
+      #chk:checked~.menu {
+        right: 0;
+      }
+
+      .hide-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+
+      #banner {
+        width: 100%;
+        height: 350px;
+        margin-bottom: 15px;
+        display: flex;
+        font-size: 30px;
+        color: white;
+        margin-top: 90px;
+      }
+
+      #banner h2 {
+        margin: 10px 20px;
+        color: #fff;
+      }
+
+      #circle-container {
+        width: 100%;
+      }
+
+      #circle-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .circle img {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        float: left;
+        margin-left: 10%;
+        margin-bottom: 20px;
+      }
+
+      #left-side {
+        width: 100%;
+        height: 200px;
+        background-color: gray;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      #left-p>h2 {
+        text-align: left;
+        margin: 5px 5px;
+      }
+
+      #left-p>p {
+        font-size: 20px;
+        padding: 10px;
+        text-align: justify;
+        line-height: 28px;
+      }
+
+      #right-side {
+        width: 100%;
+        height: 400px;
+      }
+
+      .artical {
+        height: 31%;
+        margin-bottom: 20px;
+        background-color: chocolate;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        overflow: hidden;
+      }
+
+      #p1 {
+        background-image: url(../Image/p1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p2 {
+        background-image: url(../Image/p2.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p3 {
+        background-image: url(../Image/p3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #grid-container {
+        width: 100%;
+        margin: 15px auto;
+      }
+
+      #grid-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .grid {
+        width: 40%;
+        float: left;
+        margin-left: 50px;
+        background-color: lightgrey;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .grid>img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .grid>h4 {
+        margin: 0px 10px;
+        text-align: center;
+      }
+
+      .grid>p {
+        margin: 10px;
+        font-size: 15px;
+        text-align: justify;
+        line-height: 25px;
+        color: white;
+      }
+
+      .grid>a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        background-color: red;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      h1 {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding: 25px 0px;
+      }
+
+      
+
+      @media (max-width: 625px) {
+
+        #container {
+          min-width: 320px;
         }
-        ul li a:hover{
-            /* color: white; */
-            background-color: yellow;
+
+        .show-btn {
+          display: block;
         }
-        #banner
-        {
-            width: 100%;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-            /* background-color: cadetblue; */
-            /* padding: 20px; */
+
+        .menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 100%;
+          background-color: #333;
+          text-align: center;
+          padding: 80px 0px;
+          line-height: normal;
+          transition: 0.7s;
         }
-        #banner img{
-            width: 100%;
-            margin: 0 20px;
-            position: relative;
+
+        .menu li {
+          display: block;
         }
-        #text
-        {
-            position: absolute;
-            color: white;
-            top:110px;
-            left: 40px;
-            font-size: 90px;
+
+        .manu li a {
+          display: block;
         }
-        #section
-        {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 30px 0 20px;
-            font-size: 50px;
+
+        #chk:checked~.menu {
+          right: 0;
         }
-        #circlecontainer
-        {
-            /* border: 2px solid; */
-            width: 100%;
-            height: auto;
+
+        .hide-btn {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 10px;
         }
-        #circlecontainer::after{
-            content: '';
-            display: block;
-            clear: both;
-            /* margin-top: 30px; */
+
+        #banner {
+          width: 100%;
+          height: 250px;
+          margin-bottom: 15px;
+          color: white;
+          margin-top: 90px;
         }
-        #circle
-        {
-            border: 2px solid;
-            width: 250px;
-            height: 250px;
-            border-radius: 100%;
-            margin-left: 65px;
-            /* justify-content: center; */
-            float: left;
-            background-color: goldenrod;
+
+        #banner h2 {
+          margin: 10px 20px;
+          color: #fff;
+          font-size: 20px;
         }
-        #circle img{
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
+
+        #circle-container {
+          width: 90%;
+          margin-left: 10%;
         }
-        #content
-        {
-            /* border: 2px solid; */
-            width: 100%;
+
+        .circle img {
+          height: 70%;
+          width: 70%;
+
+          border-radius: 50%;
+          margin-bottom: 20px;
         }
-        #content::after{
-            content: '';
-            display: block;
-            clear: both;
+
+        #left-side {
+          width: 100%;
+          height: 200px;
+          background-color: gray;
+          color: #fff;
+          margin-bottom: 20px;
         }
-        #leftbar
-        {
-            /* border: 2px solid; */
-            width: 50%;
-            height: 640px;
-            margin-left: 20px;
-            float: left;
-            background-color: indianred;
-            font-family: Arial, Helvetica, sans-serif;
-            /* display: flex;
-            justify-content: center;
-            align-items: center; */
+
+        #left-p>h2 {
+          text-align: left;
+          margin: 5px 5px;
         }
-        #leftbar p
-        {
-            text-align: justify;
-            color: white;
+
+        #left-p>p {
+          font-size: 20px;
+          padding: 10px;
+          text-align: justify;
+          line-height: 28px;
         }
-        #rightbar
-        {
-            /* border: 2px solid; */
-            width: 45%;
-            height: 640px;
-            margin-right: 20px;
-            float: right;
+
+        #right-side {
+          width: 100%;
+          height: 400px;
         }
-        #article-1
-        {
-            width: 100%;
-            height: 200px;
-            background-color: red;
-            margin-bottom: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
+
+        .artical {
+          box-sizing: border-box;
+          height: 31%;
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: center;
+          font-size: 16px;
+          font-family: Arial, Helvetica, sans-serif;
+          color: black;
+          overflow: hidden;
         }
-        #article-1 img{
-            height: 100%;
-            width: 100%;
-            position: relative;
+
+        #p1 {
+          background-image: url(../Image/p1.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
         }
-        #project1
-        {
-            position: absolute;
-            color: black;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 30px;
-            top: 1312px;
-            /* left: auto;
-            right: auto;
-            bottom: 150px; */
+
+        #p2 {
+          background-image: url(../Image/p2.jpeg);
+          background-size: cover;
+          background-repeat: no-repeat;
         }
-        #article-2
-        {
-            width: 100%;
-            height: 200px;
-            background-color: red;
-            margin-bottom: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
+
+        #p3 {
+          background-image: url(../Image/p3.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
         }
-        #article-2 img{
-            height: 100%;
-            width: 100%;
+
+        #grid-container {
+          width: 100%;
+          box-sizing: border-box;
         }
-        #project2
-        {
-            position: absolute;
-            color: black;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 30px;
-            top: 1532px;
-            /* left: auto;
-            right: auto;
-            bottom: 150px; */
+
+        .grid {
+          margin-left: 20px;
+          width: 90%;
+          background-color: lightgrey;
+          border-radius: 8px;
+          margin-bottom: 20px;
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+          max-height: 500px;
         }
-        #article-3
-        {
-            width: 100%;
-            height: 200px;
-            background-color: red;
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* margin-bottom: 10px; */
-            color: white;
+
+        .grid>img {
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 20px;
         }
-        #article-3 img{
-            height: 100%;
-            width: 100%;
+
+        .grid>h4 {
+          margin: 0px 10px;
+          text-align: center;
         }
-        #project3
-        {
-            position: absolute;
-            color: black;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 30px;
-            top: 1752px;
-            /* left: auto;
-            right: auto;
-            bottom: 150px; */
+
+        .grid>p {
+          margin: 10px;
+          font-size: 15px;
+          text-align: justify;
+          line-height: 25px;
+          color: white;
         }
-        #boxcontainer
-        {
-            /* border: 2px solid; */
-            width: 97%;
-            height: auto;
-            padding-top: 7px;
-            margin: 0 1.5%;
+
+        .grid>a {
+          display: block;
+          margin: 0 auto;
+          text-align: center;
+          color: #fff;
+          background-color: red;
+          text-decoration: none;
+          padding: 10px;
+          border-radius: 8px;
         }
-        #boxcontainer::after{
-            content: '';
-            display: block;
-            clear: both;
+
+        h1 {
+          color: black;
+          font-size: 20px;
+          text-align: center;
+          padding-top: 25px;
+          padding-bottom: 15px;
         }
-        #box
-        {
-            /* border: 2px solid; */
-            border-radius: 3%;
-            width: 20%;
-            height: auto;
-            /* border-radius: 100%; */
-            margin: 0 20px;
-            float: left;
-            background-color:aqua;
-            padding: 10px;
-        }
-        #box img
-        {
-            width: 100%;
-            height: 150px;
-            border-radius: 8%;
-        }
-        
-        .button{
-            display: block;
-            background: orange;
-            text-align: center;
-            padding: 7px 0;
-            border-radius: 8px;
-            color:white;
-            text-decoration: none;
-            margin-top: 15px;
-            margin-bottom: 2px;
-        }
-        .button:hover
-        {
-            /* color: blue; */
-            background: blue;
-        }
-        #box p{
-            margin:8px 0;
-            word-spacing: 8px;
-            overflow:initial;
-        
-        }
-        #footer
-        {
-            width: 100%;
-            padding-top: 30px;
-            background-color:rgb(42, 193, 243);
-            color: black;
-            /* display: flex;
-            align-items: center; */
-            /* justify-content: center; */
-            height: 100px;
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            margin-bottom: 5px;
-        }
-        
-    </style>
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div id="container">
-        <div id="header">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#About Us">ABOUT US</a></li>
-                <li><a href="#Team Members">TEAM</a></li>
-                <li><a href="#Technologies Used">TECHNOLOGIES</a></li>
-                <li><a href="#Contact Us">CONTACT</a></li>
-            </ul>
-        </div>
-        <div id="banner">
-            <img src="../Image/practical8.jpg" alt="Practical-8 Image">
-            <div id="text">PRACTICAL-8</div>
-        </div>
-        <h3 id="section"><a name="Team Members">Team Members</a></h3>
-        <div id="circlecontainer">
-            <div id="circle">
-                <img src="../Image/emp1.png" alt="Employee 1">
-            </div>
-            <div id="circle">
-                <img src="../Image/emp2.png" alt="Employee 2">
-            </div>
-            <div id="circle">
-                <img src="../Image/emp3.png" alt="Employee 3">
-            </div>
-            <div id="circle">
-                <img src="../Image/emp4.png" alt="Employee 4">
-            </div>
-        </div>
-        <h3 id="section"><a name="About Us">About Us</a></h3>
-        <div id="content">
-            <div id="leftbar">
-                <h1>About Projects</h1>
-                <br>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis natus necessitatibus itaque sequi, tempore doloribus asperiores modi sunt quis ipsa iure, sint error neque nulla harum magni aperiam temporibus maiores eum perferendis distinctio? Aperiam incidunt eligendi vitae temporibus fugit, pariatur a ipsam voluptatum nobis quidem fugiat earum quo minus expedita, ea quae similique inventore laboriosam. Nulla commodi nesciunt distinctio ducimus repudiandae, dicta numquam placeat possimus in quasi ut inventore reprehenderit! Ullam exercitationem obcaecati debitis tenetur fugiat maxime dolores ipsam beatae necessitatibus quisquam, modi, aliquid odit ducimus fugit iusto! Incidunt suscipit vitae laboriosam exercitationem ea recusandae non porro eos voluptatem unde?Lorem ipsum dolor sit amet consectetur adipisicing elit. Non reprehenderit iste qui eos omnis laudantium alias magni laboriosam vitae neque.Lorem ipsum dolor, sit amet consectetur adipisicing elit. A inventore atque optio, cum quaerat officia, iusto omnis obcaecati dolorum saepe aliquam eveniet. Animi possimus illo qui ut perspiciatis dolores quaerat obcaecati facere eius eum officiis rem ipsum odit ullam culpa sed, cumque sint corrupti quo pariatur. Officiis, nostrum vel! Eius libero voluptatem aliquam deleniti quod ea in, voluptate corporis, blanditiis quo veniam totam non? Placeat dolorum esse inventore ad fuga, praesentium doloremque facere porro soluta earum recusandae asperiores officiis. Voluptatibus ullam quaerat quis aut cum nemo, molestias sunt in quae recusandae numquam iusto voluptate maiores molestiae tenetur. Excepturi, incidunt error?Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nemo maxime quae unde perspiciatis beatae animi qui optio itaque facilis! Incidunt quasi cumque architecto obcaecati blanditiis ut at quod repellendus voluptate consectetur reprehenderit laborum iusto aspernatur voluptatibus dignissimos enim rem atque minima, dolor earum. Quo nemo ipsa obcaecati iure distinctio!Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quod earum, impedit eius corrupti commodi exercitationem eum debitis quidem! Magni impedit earum tempore cupiditate! Sed id ullam reiciendis nobis reprehenderit quis veritatis dolorem eaque neque incidunt facilis recusandae dolores necessitatibus nihil, explicabo doloribus? Quisquam provident ea doloremque, ipsam tempora magni nulla optio praesentium rem veritatis rerum veniam aliquam necessitatibus obcaecati vel repudiandae minus! Esse velit dolorum odio minus voluptatum recusandae illo officiis provident, soluta magni sint ipsa ducimus cum veniam officia porro, ipsam, placeat quis fugiat eius! Blanditiis dicta enim doloribus ea, saepe asperiores fugit quis quaerat odit velit harum.</p>
-            </div>
-            <div id="rightbar">
-                <div id="article-1">
-                    <img src="../Image/p3.jpg" alt="">
-                    <div id="project1"><h3>PROJECT-1</h3></div>
-                </div>
-                <div id="article-2">
-                    <img src="../Image/p1.jpg" alt="">
-                    <div id="project2"><h3>PROJECT-2</h3></div>
-                </div>
-                <div id="article-3">
-                    <img src="../Image/p2.jpeg" alt="">
-                    <div id="project3"><h3>PROJECT-3</h3></div>    
-                </div>
-            </div>
-        </div>
-        <h3 id="section"><a name="Technologies Used">Technologies Used</a></h3>
-        <div id="boxcontainer">
-            <div id="box">
-                <img src="../Image/html.png" alt="">
-                <h3>Introduction to HTML</h3>
-                <p>Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser.</p>
-                <a class = 'button' href = "../practicals/practical-5-html.html" target="_blank">Read More</a>
-            </div>
-            <div id="box">
-                <img src="../Image/CSS.jpg" alt="CSS">
-                <h3>Introduction to CSS</h3>
-                <p>Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to simplify the process of making web pages presentable.</p>            
-                <a class = 'button' href = "../practicals/practical-5-css.html" target="_blank">Read More</a>
-            </div>
-            <div id="box">
-                <img src="../Image/js.png" alt="JS">
-                <h3>Introduction to Javascript</h3>
-                <p>JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive (e.g., having complex animations, clickable buttons, etc).</p>            
-                <a class = 'button' href = "../practicals/practical-5-js.html" target="_blank">Read More</a>
-            </div>
-            <div id="box">
-                <img src="../Image/bootstrap.png" alt="Bootstrap">
-                <h3>Introduction to Bootstrap</h3>
-                <p>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It is the 7th most starred project on GitHub.</p>            
-                <a class = 'button' href = "../practicals/practical-5-bootstrap.html" target="_blank">Read More</a>
-            </div>
-        </div>
-        <h3 id="section"><a name="Contact Us">Contact Us</a></h3>
-        <div id="footer">
-            <p style="margin-bottom: 20px;">Website Template For Practical-8 &copy <a href="https://www.beta-labs.in/" target="_blank">Beta-Labs</a></p>
-            <a href="#top">Back to Top</a>
-        </div>
+  <div id="container">
+    <div id="header">
+      <input type="checkbox" id="chk" />
+      <label for="chk" class="show-btn">
+        <i class="fa fa-bars"></i>
+      </label>
+      <ul class="menu">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#circle-container">Team</a></li>
+        <li><a href="#Technologies">Technologies</a></li>
+        <li><a href="#contact">contact</a></li>
+
+        <label for="chk" class="hide-btn">
+          <i class="fa fa-times"></i>
+        </label>
+      </ul>
     </div>
+    <a name="top"></a>
+
+    <div id="banner">
+      <h2>PRACTICAL - 9</h2>
+    </div>
+    <div id="circle-container">
+      <h1>Team Members</h1>
+      <div class="circle">
+        <img src="../Image/emp1.png" alt="" />
+      </div>
+      <div class="circle">
+        <img src="../Image/emp2.png" alt="" />
+      </div>
+      <div class="circle">
+        <img src="../Image/emp3.png" alt="" />
+      </div>
+      <div class="circle">
+        <img src="../Image/emp4.png" alt="" />
+      </div>
+    </div>
+    <div id="sec2-container">
+      <a name="about"></a>
+      <h1>About Us</h1>
+      <div id="left-side">
+        <div class="left-content">
+          <div id="left-p">
+            <h2>About Projects</h2>
+            <p>
+              temporibus similique sit tenetur quasi exercitationem! Repellat
+              obcaecati quibusdam iste explicabo laborum veritatis velit
+              accusantium animi dolorum nemo ut quam, quo cum in suscipit
+              fugiat minima corrupti voluptates tempora alias aspernatur esse
+              dolore iure? Libero iste quo nam sequi nulla, minima architecto
+              est cum expedita omnis enim culpa reiciendis nesciunt quod
+              deserunt, nostrum corporis tempore impedit veritatis ut
+              perspiciatis rerum. Amet, harum pariatur. Quo dolorum
+              necessitatibus eos beatae eveniet, earum cum blanditiis,
+              accusamus vitae, nisi voluptas dignissimos modi quibusdam aut
+              veniam deserunt accusantium possimus atque? Distinctio voluptas
+              nemo, fuga laboriosam perspiciatis eum debitis nesciunt quidem
+              iure ratione! Eaque ea eum maxime temporibus dolor nostrum, iure
+              enim, vero in atque quod animi! Mollitia alias magnam nisi
+              suscipit ab ducimus dolores provident. Distinctio veritatis
+              quaerat explicabo fuga neque culpa facere suscipit vel, totam
+              quasi!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="right-side">
+        <div class="artical" id="p1">
+          <h2>Project-1</h2>
+        </div>
+        <div class="artical" id="p2">
+          <h2>Project-2</h2>
+        </div>
+        <div class="artical" id="p3">
+          <h2>Project-3</h2>
+        </div>
+      </div>
+    </div>
+    <div id="grid-container">
+      <a name="Technologies"></a>
+      <h1>Technologies Used</h1>
+      <div class="grid">
+        <img src="https://imgur.com/joZlsqC.png" alt="" />
+        <h4>Introduction to HTML</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+          illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+          recusandae consequuntur!
+        </p>
+
+        <a href="practical-5-html.html">Read More</a>
+      </div>
+      <div class="grid">
+        <img src="https://imgur.com/8F89zk5.png" alt="" />
+        <h4>Introduction to CSS</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+          illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+          recusandae consequuntur!
+        </p>
+
+        <a href="practical-5-css.html">Read More</a>
+      </div>
+      <div class="grid">
+        <img src="https://imgur.com/YWiaReD.png" alt="" />
+        <h4>Introduction to JavaScript</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+          illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+          recusandae consequuntur!
+        </p>
+
+        <a href="practical-5-jq.html">Read More</a>
+      </div>
+      <div class="grid">
+        <img src="https://imgur.com/L0JabFG.jpg" alt="" />
+        <h4>Introduction to Bootstrap</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+          illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+          recusandae consequuntur!
+        </p>
+
+        <a href="practical-5-boot.html">Read More</a>
+      </div>
+    </div>
+    <a name="contact"></a>
+    <h1>Contact</h1>
+    <div id="footer">
+      <p>
+        Website Template for Practical-9 &copy;
+        <a href="https://beta-labs.in">Beta-labs</a><br /><br />
+        <a href="#top">Back to top</a>
+      </p>
+    </div>
+  </div>
 </body>
+
 </html>
