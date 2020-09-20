@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+body{
+    background-color: lightgrey;
+    /* display: flex;
+    flex-direction: column; */
+}
+header h1{
+    color: red;
+    font-size: 80px;
+    text-align: center;
+    margin-top: 30px;
+}
+.main-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.form-template1{
+    width: 300px;
+    height: 350px;
+    background-color: #fff;
+    /* padding: 20px; */
+    margin-top: 50px;
+    border-radius: 5px;
+}
+.form-header-t1{
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to right,orange,red);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.form-header-t1 h1{
+    color: white;
+    font-size: 20px;
+    padding: 10px 0;
+}
+.form-header-t1 .social i{
+    color:white;
+    font-size: 20px;
+    padding: 10px 10px;
+}
+.form-container-t1{
+    padding: 20px;
+}
+input[type=email]{
+    outline: none;
+    border: none;
+    border-bottom:1px solid grey;
+    padding: 10px 0;
+    width: 100%;
+}
+input[type=password]{
+    outline: none;
+    border: none;
+    border-bottom:1px solid grey;
+    padding: 10px 0;
+    width: 100%;
+}
+.form-container-t1 p{
+    font-size: 12px;
+    color: grey;
+    padding: 20px 0;
+    text-align: right;
+}
+input[type=submit]{
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    font-size: 10px;
+    color: white;
+    background-color: rgb(165, 150, 150);
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+.form-container-t1 p#p2{
+    display: inline-block;
+    margin-left: 10px;
+}
+.form-container-t1 b{
+    color: black;
+}
+.form-template2{
+    width: 300px;
+    height: 350px;
+    background-color: #fff;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+.form-template2 .head{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+.form-template2 .head h1{
+    color: black;
+    font-size: 20px;
+}
+.form-container-t2{
+    width: 100%;
+    height: 217px;
+    padding: 20px;
+
+}
+.form-container-t2 #chk{
+    margin-top: 20px;
+}
+.form-container-t2 #p2{
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 30px;
+}
+.form-container-t2 #p1{
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.form-container-t2 b{
+    color: skyblue;
+}
+.form-footer2{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(57, 175, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.form-footer2 i{
+    color: white;
+    font-size: 20px;
+    padding: 0 10px;
+}
+.form-template3{
+    width: 300px;
+    height: 350px;
+    background-color: #fff;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+.form-template3 .head{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+.form-template3 .head h1{
+    color: black;
+    font-size: 20px;
+}
+.form-container-t3{
+    width: 100%;
+    height: 217px;
+    padding: 20px;
+
+}
+.form-container-t3 #p2{
+    font-size: 12px;
+    text-align: center;
+}
+.form-container-t3 input[type=submit]{
+    width: 100%;
+    background: linear-gradient(to left,blue,skyblue);
+    margin-bottom: 10px;
+}
+.form-container-t3 #p1{
+    color: skyblue;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 10px;
+}
+.form-container-t3 b{
+    color: skyblue;
+}
+.form-footer3{
+    width: 100%;
+    height: 70px;
+    /* background-color: rgb(57, 175, 214); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.form-footer3 i{
+    color: blueviolet;
+    /* border: 1px solid; */
+    display: flex;
+    font-size: 12px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 0 10px;
+    box-shadow: 2px 2px 5px #3498db;
+}
+input[type=email]:focus::placeholder,
+input[type=password]:focus::placeholder {
+    position: relative;
+    bottom: 10px;
+    color: blue;
+    font-size: 12px;
+    
+}
+
