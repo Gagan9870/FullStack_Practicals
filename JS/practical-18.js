@@ -21,7 +21,7 @@ function checkInputs(){
     if(usernameValue === ''){
         showError(username,"Username can't be blank");
     }
-    else if(!isUsernameValid(usernameValue){
+    else if(!isUsernameValid(usernameValue)){
         showError(username,"Username is not Valid");
     }
     else{
@@ -73,5 +73,5 @@ function isEmailValid(email){
 }
 
 function isUsernameValid(name){
-    return /^(a-zA-Z)(0-9)$/.test(name);
+    return /^([a-zA-Z]+)([0-9]+)$/.test(name);
 }
